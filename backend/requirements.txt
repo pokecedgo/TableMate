@@ -1,0 +1,9 @@
+Flask
+torch
+opencv-python
+numpy
+Pillow
+requests
+flask-cors
+python-dotenv
+ultralytics
