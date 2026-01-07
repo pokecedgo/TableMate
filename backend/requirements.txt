@@ -1,5 +1,7 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 Flask
-torch
+torch==2.2.2+cpu
+torchvision==0.17.2+cpu
 opencv-python
 numpy
 Pillow
@@ -7,3 +9,4 @@ requests
 flask-cors
 python-dotenv
 ultralytics
+lap>=0.5.12
