@@ -3,7 +3,7 @@ Flask
 torch==2.2.2+cpu
 torchvision==0.17.2+cpu
 opencv-python
-numpy
+numpy==1.26.4
 Pillow
 requests
 flask-cors
