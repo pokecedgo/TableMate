@@ -13,7 +13,12 @@ def create_app() -> Flask:
     load_dotenv(repo_root / ".env")
 
     app = Flask(__name__)
-    CORS(app)
+    allowed_origins = os.environ.get(
+        "FRONTEND_ORIGINS",
+        "https://tablemate-64d1d.web.app,https://tablemate.work,https://www.tablemate.work,http://localhost:5173",
+    )
+    origins = [origin.strip() for origin in allowed_origins.split(",") if origin.strip()]
+    CORS(app, resources={r"/*": {"origins": origins}})
     app.register_blueprint(api)
     return app
 
