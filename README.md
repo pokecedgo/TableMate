@@ -2,16 +2,22 @@
 
 <div style="display:flex;align-items:center;gap:12px;">
   <img src="docs/assets/TableMateLogoOfficial.png" alt="TableMate logo" width="240" />
-  <strong>TableMate</strong>
 </div>
 
-## TableMate Origins
+ **Report Issues/Feature Requests:** https://github.com/pokecedgo/TableMate/discussions
+[![Open Discussions](https://img.shields.io/badge/Open-Discussions-111827?style=for-the-badge&logo=github)](https://github.com/pokecedgo/TableMate/discussions)
+
+ **TableMate:** https://tablemate.work
+[![Visit TableMate](https://img.shields.io/badge/Visit-TableMate-111827?style=for-the-badge&logo=vercel)](https://tablemate.work)
+
+---
+## TableMate Story
 <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
   <img src="docs/assets/IslandCentral.png" alt="Island Central logo" width="220" />
   <img src="docs/assets/IslandCentralEmployees.jpg" alt="Island Central staff" width="260" />
 </div>
 
-While dining in the corner of a small restaurant, I watched the space transform into a full
+While dining in the corner of a small restaurant in Jersey, I watched the space go from empty into a full
 house - over 30 people packed into a tight floor. Like many busy small businesses, this
 restaurant was experiencing a major rush while trying to maximize profits by juggling
 dine-in service alongside multiple delivery platforms. I happened to be seated near the
@@ -33,14 +39,27 @@ teams stay aware, responsive, and efficient during peak moments.
 - Room control for staff device coordination
 - Owner + employee views with real-time updates
 
+## Why use TableMate in your business?
+---
+Need a bathroom break? TableMate keeps watch and alerts you the moment someone walks in using our ** Room Feature.** A way to connect any amount of devices, whether a work tablet or your personal phone, to the TableMate application.
+
+Busy rush with and the business is getting orders from UberEats & Doordash but there's only 2 employees on the floor? TableMate flags **hand‑raise detection** help customers be priotized at all times so no table gets missed and your business maintains that high rating review!
+
+Working the register while delivery pickups pile up? TableMate helps you prioritize who needs you next and alerts customers that enters/leaves the door with **Door Detection**.
+
+Blind spots in the dining room and don't want to risk customers waiting too long? TableMate covers the areas you can’t see from the counter. Use TableMate's **Dine Tracker** to track how long customers have been dining.
+
+---
 ## Documentation Outline (Coming Soon)
-### Architecture
 
-### Backend API
+## Recommended Camera Setup
+(TableMate allows usage of 1 Camera up to 8 Cameras)
+- **Single camera setup:** Mount the camera in a high, fixed position with a wide view of the dining floor. Aim to capture every table clearly with minimal obstructions.
+- **Multiple rooms or blocked sightlines:** If walls or layout prevent one camera from seeing all tables, add additional cameras. Each camera can have its own zone setup so every area is covered.
+- **Avoid blind spots:** Check corners, booths, and areas behind partitions. If a table can’t be seen clearly, add a second angle.
+- **Stable placement:** Use a fixed mount (tripod, wall mount, shelf) to prevent the camera from shifting during busy hours.
+- **Lighting matters:** Place cameras where lighting is consistent and avoid direct glare from windows or overhead lights to improve detection accuracy.
 
-
-### QnA (TableMate Usage)
-## Camera Setup
 
 ## Zone Creation
 
@@ -48,14 +67,19 @@ teams stay aware, responsive, and efficient during peak moments.
 
 ## Free Vs. TableMate+
 
+![TableMate plan comparison](docs/assets/PlansComparison.png)
+
 ## Management Mode
 
 ### Alerts & Notifications
 
+---
+
+### Architecture
+
+### Backend API
 
 ### Initial Project Design
-
-### Project Architecture 
 
 ## Resources
 - Ultralytics YOLO: https://docs.ultralytics.com
