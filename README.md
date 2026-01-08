@@ -1,9 +1,9 @@
 # TableMate
 
-![TableMate logo](frontend/src/TableMateAssets/TableMateLogoOfficial.png)
+![TableMate logo](docs/assets/TableMateLogoOfficial.png)
 ## Story of TableMate
 
-![Island Central](frontend/src/TableMateAssets/IslandCentral.png)
+![Island Central](docs/assets/IslandCentral.png)
 
 While dining in the corner of a small restaurant, I watched the space transform into a full
 house - over 30 people packed into a tight floor. Like many busy small businesses, this
@@ -56,4 +56,3 @@ teams stay aware, responsive, and efficient during peak moments.
 - Driver.js (guided tours): https://driverjs.com
 - Firebase: https://firebase.google.com
 - Fly.io: https://fly.io
-
