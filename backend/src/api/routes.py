@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 
-from services.yolo_service import infer_image
+from src.services.yolo_service import infer_image
 
 api = Blueprint("api", __name__)
 
