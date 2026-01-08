@@ -1,4 +1,5 @@
 # TableMate x Github
+Discover a new way to manage your business.
 
 <div style="display:flex;align-items:center;gap:12px;">
   <img src="docs/assets/TableMateLogoOfficial.png" alt="TableMate logo" width="240" />
@@ -39,6 +40,9 @@ teams stay aware, responsive, and efficient during peak moments.
 - Room control for staff device coordination
 - Owner + employee views with real-time updates
 
+## Initial Project Design
+https://drive.google.com/file/d/1JVNOImLmwKWfekDwv7iN0JJCTQchAh33/view?usp=share_link
+
 ## Why use TableMate in your business?
 ---
 Need a bathroom break? TableMate keeps watch and alerts you the moment someone walks in using our ** Room Feature.** A way to connect any amount of devices, whether a work tablet or your personal phone, to the TableMate application.
@@ -77,10 +81,9 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 ---
 
 ### Architecture
+<img src="docs/assets/ArchitectureDesign.png" alt="Pages" width="460" />
 
 ### Backend API
-
-### Initial Project Design
 
 ## Resources
 - Ultralytics YOLO: https://docs.ultralytics.com
@@ -89,8 +92,8 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 - Firebase: https://firebase.google.com
 - Fly.io: https://fly.io
 
---
-Custom Trained Models: Few Samples
+---
+## Custom Trained Models: Few Samples
+Camera used for training: EMEET SmartCam w/ Tripod 
  <img src="docs/assets/TrainingSample1.png" alt="Roboflow/YOLO" width="360" />
  <img src="docs/assets/TrainingSample2.png" alt="Roboflow/YOLO" width="360" />
---
