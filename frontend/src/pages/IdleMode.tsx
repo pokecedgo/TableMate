@@ -36,6 +36,7 @@ type UserCamera = {
   id: string;
   deviceId: string;
   label: string;
+  displayName?: string;
   lastSeen?: Timestamp;
 };
 
@@ -191,10 +192,38 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
     if (showAllCameras) return cameras;
     return activeCamera ? [activeCamera] : [];
   }, [showAllCameras, cameras, activeCamera]);
+  const needsCameraPermission = availableDeviceIds.length === 0;
+
+  const refreshAvailableDevices = async () => {
+    const allDevices = await navigator.mediaDevices.enumerateDevices();
+    const videoDevices = allDevices.filter((device) => device.kind === 'videoinput');
+    setAvailableDeviceIds(videoDevices.map((device) => device.deviceId));
+  };
+
+  const requestCameraAccess = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: false,
+      });
+      stream.getTracks().forEach((track) => track.stop());
+      await refreshAvailableDevices();
+      if (activeCamera) {
+        await startStreamForCamera(activeCamera);
+      }
+      setError('');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Unable to access camera.';
+      setError(message);
+    }
+  };
   const cameraLabelMap = useMemo(() => {
     const map = new Map<string, string>();
     cameras.forEach((camera, index) => {
-      map.set(camera.id, camera.label || `Dining Room ${index + 1}`);
+      map.set(
+        camera.id,
+        camera.displayName || camera.label || `Dining Room ${index + 1}`
+      );
     });
     return map;
   }, [cameras]);
@@ -239,14 +268,9 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
   }, [cameras, managementCameraId]);
 
   useEffect(() => {
-    const refreshDevices = async () => {
-      const allDevices = await navigator.mediaDevices.enumerateDevices();
-      const videoDevices = allDevices.filter((device) => device.kind === 'videoinput');
-      setAvailableDeviceIds(videoDevices.map((device) => device.deviceId));
-    };
-    void refreshDevices();
+    void refreshAvailableDevices();
     const handleDeviceChange = () => {
-      void refreshDevices();
+      void refreshAvailableDevices();
     };
     navigator.mediaDevices.addEventListener('devicechange', handleDeviceChange);
     return () => navigator.mediaDevices.removeEventListener('devicechange', handleDeviceChange);
@@ -316,6 +340,7 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
           id: docSnap.id,
           deviceId: data.deviceId,
           label: data.label || `Cam ${index + 1}`,
+          displayName: data.displayName,
           lastSeen: data.lastSeen,
         };
       });
@@ -638,7 +663,8 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
                 hasZoneAssist = true;
                 nextAssistance.push({
                   zoneName: zone.name,
-                  cameraLabel: camera.label,
+                  cameraLabel:
+                    camera.displayName || camera.label || `Dining Room ${index + 1}`,
                   cameraId: camera.id,
                 });
               }
@@ -657,7 +683,8 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
               if (doorHit) {
                 nextDoorZones.push({
                   zoneName: zone.name,
-                  cameraLabel: camera.label,
+                  cameraLabel:
+                    camera.displayName || camera.label || `Dining Room ${index + 1}`,
                   cameraId: camera.id,
                 });
               }
@@ -665,7 +692,9 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
           });
 
           if (directGestureConfidence >= threshold && !hasZoneAssist) {
-            nextUnzoned.push(camera.label);
+            nextUnzoned.push(
+              camera.displayName || camera.label || `Dining Room ${index + 1}`
+            );
           }
 
           handPredictions.forEach((pred: any) => {
@@ -686,7 +715,9 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
                 handY <= py + ph / 2
               ) {
                 const personId = person.id ?? index + 1;
-                personHits.add(`Person ${personId} (${camera.label})`);
+                personHits.add(
+                  `Person ${personId} (${camera.displayName || camera.label || `Dining Room ${index + 1}`})`
+                );
               }
             });
           });
@@ -973,7 +1004,7 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
                       className={camera.id === activeCamera?.id ? 'active' : ''}
                       onClick={() => setActiveCameraId(camera.id)}
                     >
-                      {camera.label || `Cam ${index + 1}`}
+                      {camera.displayName || camera.label || `Cam ${index + 1}`}
                     </button>
                   ))}
                 </div>
@@ -983,6 +1014,16 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
                   onClick={() => setShowAllCameras((prev) => !prev)}
                 >
                   {showAllCameras ? 'Show one' : 'Show all'}
+                </button>
+              </div>
+            ) : null}
+            {needsCameraPermission ? (
+              <div className="idle-camera-permission">
+                <div>
+                  Camera access is required to start live monitoring. Allow access to continue.
+                </div>
+                <button type="button" onClick={requestCameraAccess}>
+                  Enable camera access
                 </button>
               </div>
             ) : null}
@@ -1003,7 +1044,7 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
                       className={`idle-preview ${isMissing ? 'disconnected' : ''}`}
                     >
                       <div className="idle-preview-label">
-                        {camera.label || `Cam ${index + 1}`}
+                        {camera.displayName || camera.label || `Cam ${index + 1}`}
                       </div>
                       <video
                         ref={(el) => {
@@ -1160,7 +1201,7 @@ const IdleMode: React.FC<{ embedded?: boolean }> = ({ embedded = false }) => {
                       className={camera.id === managementCamera?.id ? 'active' : ''}
                       onClick={() => setManagementCameraId(camera.id)}
                     >
-                      {camera.label || `Dining Room ${index + 1}`}
+                      {camera.displayName || camera.label || `Dining Room ${index + 1}`}
                     </button>
                   ))}
                 </div>
