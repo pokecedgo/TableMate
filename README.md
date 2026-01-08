@@ -1,11 +1,15 @@
-# TableMate
+# TableMate x Github
 
-<img src="docs/assets/TableMateLogoOfficial.png" alt="TableMate logo" width="160" />
-## Story of TableMate
+<div style="display:flex;align-items:center;gap:12px;">
+  <img src="docs/assets/TableMateLogoOfficial.png" alt="TableMate logo" width="240" />
+  <strong>TableMate</strong>
+</div>
 
-<img src="docs/assets/IslandCentral.png" alt="Island Central logo" width="220" />
-<br />
-<img src="docs/assets/IslandCentralEmployees.jpg" alt="Island Central staff" width="260" />
+## TableMate Origins
+<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+  <img src="docs/assets/IslandCentral.png" alt="Island Central logo" width="220" />
+  <img src="docs/assets/IslandCentralEmployees.jpg" alt="Island Central staff" width="260" />
+</div>
 
 While dining in the corner of a small restaurant, I watched the space transform into a full
 house - over 30 people packed into a tight floor. Like many busy small businesses, this
