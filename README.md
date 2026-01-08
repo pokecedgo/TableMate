@@ -61,9 +61,9 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 - **Lighting matters:** Place cameras where lighting is consistent and avoid direct glare from windows or overhead lights to improve detection accuracy.
 
 
-## Zone Creation
+## Zone Creation (How To)
 
-## Room Creation
+## Room Creation (How To)
 
 ## Free Vs. TableMate+
 
@@ -71,8 +71,9 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 
 ## Management Mode
 
-### Alerts & Notifications
+## Alerts & Notifications
 
+## Settings
 ---
 
 ### Architecture
@@ -83,6 +84,13 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 
 ## Resources
 - Ultralytics YOLO: https://docs.ultralytics.com
+- Roboflow: https://roboflow.com
 - Driver.js (guided tours): https://driverjs.com
 - Firebase: https://firebase.google.com
 - Fly.io: https://fly.io
+
+--
+Custom Trained Models: Few Samples
+ <img src="docs/assets/TrainingSample1.png" alt="Roboflow/YOLO" width="360" />
+ <img src="docs/assets/TrainingSample2.png" alt="Roboflow/YOLO" width="360" />
+--
