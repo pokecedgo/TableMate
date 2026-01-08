@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_cors import CORS
 
-from api.routes import api
+from src.api.routes import api
 
 
 def create_app() -> Flask:
