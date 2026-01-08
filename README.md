@@ -1,9 +1,11 @@
 # TableMate
 
-![TableMate logo](docs/assets/TableMateLogoOfficial.png)
+<img src="docs/assets/TableMateLogoOfficial.png" alt="TableMate logo" width="160" />
 ## Story of TableMate
 
-![Island Central](docs/assets/IslandCentral.png)
+<img src="docs/assets/IslandCentral.png" alt="Island Central logo" width="220" />
+<br />
+<img src="docs/assets/IslandCentralEmployees.jpg" alt="Island Central staff" width="260" />
 
 While dining in the corner of a small restaurant, I watched the space transform into a full
 house - over 30 people packed into a tight floor. Like many busy small businesses, this
