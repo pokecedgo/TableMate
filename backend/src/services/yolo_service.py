@@ -73,7 +73,25 @@ def _infer_hand_local(image_bytes: bytes, params: Mapping[str, str]) -> dict:
 
     image = Image.open(BytesIO(image_bytes)).convert("RGB")
     image_np = np.array(image)
-    results = model.predict(image_np, conf=confidence, iou=iou, verbose=False)
+    try:
+        results = model.predict(
+            image_np,
+            conf=confidence,
+            iou=iou,
+            imgsz=640,
+            device="cpu",
+            fuse=False,
+            verbose=False,
+        )
+    except TypeError:
+        results = model.predict(
+            image_np,
+            conf=confidence,
+            iou=iou,
+            imgsz=640,
+            device="cpu",
+            verbose=False,
+        )
 
     predictions = []
     if results:
@@ -123,9 +141,27 @@ def _infer_people_local(image_bytes: bytes, params: Mapping[str, str]) -> dict:
 
     image = Image.open(BytesIO(image_bytes)).convert("RGB")
     image_np = np.array(image)
-    results = model.track(
-        image_np, conf=confidence, iou=iou, persist=True, verbose=False
-    )
+    try:
+        results = model.track(
+            image_np,
+            conf=confidence,
+            iou=iou,
+            imgsz=640,
+            device="cpu",
+            fuse=False,
+            persist=True,
+            verbose=False,
+        )
+    except TypeError:
+        results = model.track(
+            image_np,
+            conf=confidence,
+            iou=iou,
+            imgsz=640,
+            device="cpu",
+            persist=True,
+            verbose=False,
+        )
 
     predictions = []
     if results:
