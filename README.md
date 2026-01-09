@@ -83,6 +83,8 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 ### Architecture
 <img src="docs/assets/ArchitectureDiagram.png" alt="Pages" width="960" />
 
+<img src="docs/assets/RoomSystemFlow.png" alt="Room System" width="960" />
+
 ### Backend API
 
 ## Resources
