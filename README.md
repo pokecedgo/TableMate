@@ -45,7 +45,7 @@ https://drive.google.com/file/d/1JVNOImLmwKWfekDwv7iN0JJCTQchAh33/view?usp=share
 
 ## Why use TableMate in your business?
 ---
-Need a bathroom break? TableMate keeps watch and alerts you the moment someone walks in using our ** Room Feature.** A way to connect any amount of devices, whether a work tablet or your personal phone, to the TableMate application.
+Need a bathroom break? TableMate keeps watch and alerts you the moment someone walks in using our **Room Feature.** A way to connect any amount of devices, whether a work tablet or your personal phone, to the TableMate application.
 
 Busy rush with and the business is getting orders from UberEats & Doordash but there's only 2 employees on the floor? TableMate flags **hand‑raise detection** help customers be priotized at all times so no table gets missed and your business maintains that high rating review!
 
