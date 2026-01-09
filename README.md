@@ -81,7 +81,7 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 ---
 
 ### Architecture
-<img src="docs/assets/ArchitectureDiagram.png" alt="Pages" width="460" />
+<img src="docs/assets/ArchitectureDiagram.png" alt="Pages" width="960" />
 
 ### Backend API
 
@@ -95,5 +95,6 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 ---
 ## Custom Trained Models: Few Samples
 Camera used for training: EMEET SmartCam w/ Tripod 
+
  <img src="docs/assets/TrainingSample1.png" alt="Roboflow/YOLO" width="360" />
  <img src="docs/assets/TrainingSample2.png" alt="Roboflow/YOLO" width="360" />
