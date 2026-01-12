@@ -14,11 +14,13 @@ Discover a new way to manage your business.
 **TableMate Ultimate Guide**
 https://www.youtube.com/watch?v=anDzsKTFFCI
 ---
-## TableMate Story
+
 <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
   <img src="docs/assets/IslandCentral.png" alt="Island Central logo" width="220" />
   <img src="docs/assets/IslandCentralEmployees.jpg" alt="Island Central staff" width="260" />
 </div>
+
+***The Story Behind TableMate***
 
 While dining in the corner of a small restaurant in Jersey, I watched the space go from empty into a full
 house - over 30 people packed into a tight floor. Like many busy small businesses, this
