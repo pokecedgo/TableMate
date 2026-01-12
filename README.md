@@ -70,18 +70,53 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 
 
 ## Zone Creation (How To)
+1. Open the Zone Editor and select your active camera.
+2. Click “Draw Zone” and choose the zone type (Table or Door).
+3. Draw the shape on the camera feed, name the zone, and save.
+4. Repeat for each camera so every table and entry point is covered.
+
+**Table Zones**
+- Used to map each table’s position.
+- Hand-raise detections inside a table zone trigger assistance alerts that mention the table name.
+- Table zones also power table timers in Management mode.
+
+**Door Zones**
+- Used to mark entry/exit points.
+- People detections that overlap a door zone trigger “Customer entered/left” alerts.
+- Great for staff awareness when the dining room is quiet or understaffed.
 
 ## Room Creation (How To)
+1. Go to Room Control and create a room (one active room per owner).
+2. Share the generated room code with staff.
+3. Staff joins via “Join Room” and enters their nickname.
+4. Members appear in the owner’s list; you can refresh or remove them.
+5. End the room to disconnect all staff devices.
 
 ## Free Vs. TableMate+
 
 ![TableMate plan comparison](docs/assets/PlansComparison.png)
 
 ## Management Mode
+Management mode is the live ops view:
+1. **Camera:** see active feeds and check camera health.
+2. **Alerts:** view hand-raise and door alerts in real time.
+3. **Tables:** run dine‑in timers for each table zone.
+
+Use it during service to keep responses fast and prevent missed tables.
 
 ## Alerts & Notifications
+Alerts trigger when:
+- A hand gesture is detected inside a **Table zone**.
+- A person is detected overlapping a **Door zone**.
+
+Alerts can be reviewed by owners and staff (via Room), and are designed to be quick, visible, and actionable.
 
 ## Settings
+Settings lets you:
+- Update business name and profile details.
+- Configure alert preferences and visual options.
+- Manage plan status (Free vs. TableMate+).
+- Reset camera setup if your hardware changes.
 ---
 
 ### Architecture
@@ -89,7 +124,21 @@ Blind spots in the dining room and don't want to risk customers waiting too long
 
 <img src="docs/assets/RoomSystemFlow.png" alt="Room System" width="960" />
 
-### Backend API
+### Stack
+- **Frontend:** React + Vite + TypeScript
+- **Backend:** Python (Flask) + Ultralytics YOLO
+- **Database:** Firebase Firestore
+- **Auth:** Firebase Authentication (Email/Password, Google)
+- **Realtime + Jobs:** Firebase Cloud Functions (callable) + scheduled cleanup
+- **Hosting:** Firebase Hosting (frontend) + Fly.io (backend)
+
+### APIs & Services Used
+- **Firebase Auth:** account creation, login, password reset
+- **Firestore:** rooms, members, users, zones, settings
+- **Cloud Functions (callable):** joinRoomByCode
+- **Cloud Functions (scheduled):** cleanupExpiredRooms
+- **YOLO Inference API (self-hosted):** /infer/hand-gestures, /infer/people
+- **YouTube Embed:** onboarding tutorial video
 
 ## Resources
 - Ultralytics YOLO: https://docs.ultralytics.com
