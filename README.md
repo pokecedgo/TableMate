@@ -8,9 +8,11 @@ Discover a new way to manage your business.
  **Report Issues/Feature Requests:** https://github.com/pokecedgo/TableMate/discussions
 [![Open Discussions](https://img.shields.io/badge/Open-Discussions-111827?style=for-the-badge&logo=github)](https://github.com/pokecedgo/TableMate/discussions)
 
- **TableMate:** https://tablemate.work
+ **TableMate Website:** https://tablemate.work
 [![Visit TableMate](https://img.shields.io/badge/Visit-TableMate-111827?style=for-the-badge&logo=vercel)](https://tablemate.work)
 
+**TableMate Ultimate Guide**
+https://www.youtube.com/watch?v=anDzsKTFFCI
 ---
 ## TableMate Story
 <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
