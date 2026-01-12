@@ -58,7 +58,6 @@ Working the register while delivery pickups pile up? TableMate helps you priorit
 Blind spots in the dining room and don't want to risk customers waiting too long? TableMate covers the areas you can’t see from the counter. Use TableMate's **Dine Tracker** to track how long customers have been dining.
 
 ---
-## Documentation Outline (Coming Soon)
 
 ## Recommended Camera Setup
 (TableMate allows usage of 1 Camera up to 8 Cameras)
