@@ -152,3 +152,41 @@ Camera used for training: EMEET SmartCam w/ Tripod
 
  <img src="docs/assets/TrainingSample1.png" alt="Roboflow/YOLO" width="360" />
  <img src="docs/assets/TrainingSample2.png" alt="Roboflow/YOLO" width="360" />
+ 
+---
+## Project Timeline (Dec 4 - Jan 15)
+
+I traveled back and forth throughout Dec-Jan to the (1 hour away) Island Central restaurant for application testing & model training. Live training was pivotal for the application efficiency so a majority of issues came up when testing (debugging). When back home, I trained hand gesture detection while also working/polishing the website flow and backend integration with firebase and (initially Roboflow but eventually used localized training for token purposes) Table/people detection were testing at the restaurant to ensure various angles and distances were into consideration for the YOLO model.
+
+**Week 1 (Dec 4-10): Foundation + discovery**
+- Defined product vision and core workflows (Zones, Alerts, Rooms, Management).
+- Set up repo structure, frontend scaffold, backend API skeleton, Firebase project.
+- Initial UI exploration and data model planning for zones, cameras, rooms.
+
+**Week 2 (Dec 11-17): Core UI + auth + rooms**
+- Built main pages (Home/Dashboard, Zones, Join Room, Room Panel).
+- Implemented Firebase auth + Firestore reads/writes.
+- Created room creation/join flow and member tracking.
+
+**Week 3 (Dec 18-24): Camera + zones + detection wiring**
+- Camera setup flow, device selection, permissions, and preview.
+- Zone creation/editing for tables and doors.
+- Connected inference endpoints and started hand-gesture detection flow.
+- Traveled back and forth to Island Central (Jersey City) to gather fixed-environment data for table/gesture training.
+
+**Week 4 (Dec 25-31): Alerts + notifications + iteration**
+- Notification system + flashing alerts.
+- Door zone alerts + cooldown logic.
+- UX refinements based on real testing.
+- Continued on-site data collection at Island Central to refine gesture/table detection.
+
+**Week 5 (Jan 1-7): Multi-camera + stability + styling**
+- Added multi-camera management (add/remove, per-camera zones).
+- Improved data persistence and handling of disconnected cameras.
+- Visual overhaul: modern dashboard layout, refined cards, typography, and branding.
+- Additional Island Central visits to validate detection in the real environment.
+
+**Week 6 (Jan 8-15): Deployment + polish + documentation**
+- Deployed frontend + backend, fixed CORS/runtime issues.
+- Added guided UI elements, updated copy, and mobile fixes.
+- Documentation: architecture diagrams, README, tutorial video integration.
